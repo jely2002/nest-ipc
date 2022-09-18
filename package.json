@@ -1,6 +1,6 @@
 {
   "name": "nest-ipc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NestJS Microservice adapter for IPC",
   "main": "lib/index.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "README.md",
     "LICENSE"
   ],
+  "keywords": ["nestjs", "nest", "ipc", "node", "microservice"],
   "author": "Jelle Glebbeek",
   "license": "MIT",
   "devDependencies": {
@@ -39,5 +40,9 @@
   "overrides": {
     "node-ipc@>9.2.1 <10": "9.2.1",
     "node-ipc@>10.1.0": "10.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jely2002/nest-ipc.git"
   }
 }
