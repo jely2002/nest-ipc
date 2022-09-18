@@ -23,7 +23,7 @@ jobs:
           draft: true
           fail_on_unmatched_files: true
           files: '*.tgz'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_CI_TOKEN }}
       - name: Build and publish artifact
         run: npm publish
         env:
