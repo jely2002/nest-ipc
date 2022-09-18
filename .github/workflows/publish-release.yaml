@@ -1,0 +1,30 @@
+name: Create release and publish to NPM
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install npm modules
+        run: npm ci
+      - name: Create tarball
+        run: npm pack
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          fail_on_unmatched_files: true
+          files: '*.tgz'
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and publish artifact
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
