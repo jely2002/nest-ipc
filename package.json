@@ -1,6 +1,6 @@
 {
   "name": "nest-ipc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NestJS Microservice adapter for IPC",
   "main": "lib/index.js",
   "scripts": {
