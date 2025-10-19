@@ -140,6 +140,6 @@ export interface IpcModuleOptions {
 ```
 
 ## Security notice
-This package uses RIAEvangelist's `node-ipc` as dependency. The `node-ipc` package includes protestware in its recent versions. This protestware will add a file to your desktop and print a heart in the console.
+This package uses RIAEvangelist's `node-ipc` as dependency. The `node-ipc` package used to include protestware. This protestware would add a file to your desktop and print a heart in the console, in some other versions it would delete files.
 
-The version of `node-ipc` that this package uses is locked to a non-impacted version and overriden in package.json to prevent any accidents.
+The version of `node-ipc` that this package uses is locked to a non-impacted version (12.0.0) and overriden in package.json to prevent any accidents.
