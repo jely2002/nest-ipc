@@ -22,25 +22,25 @@ export class IpcClient extends ClientProxy {
       ...this.options,
       logger: (data) => {
         this.logger.debug(data);
-      }
-    }
+      },
+    };
 
     ipc.connectTo(
       this.id,
       () => {
         ipc.of[this.id].on(
-          'connect',
+          "connect",
           () => {
             ipc.log(`Connected to ${this.id}`);
-          }
+          },
         );
         ipc.of[this.id].on(
-          'disconnect',
+          "disconnect",
           () => {
             ipc.log(`Disconnected from ${this.id}`);
-          }
+          },
         );
-      }
+      },
     );
   }
 
@@ -64,17 +64,17 @@ export class IpcClient extends ClientProxy {
       callback({ response: data });
     };
     const errorHandler = (err) => {
-      ipc.of[this.id].off('err', responseHandler);
+      ipc.of[this.id].off("err", responseHandler);
       callback({ err, response: undefined });
-    }
+    };
     ipc.of[this.id].on(packet.pattern, responseHandler);
-    ipc.of[this.id].on('error', errorHandler);
+    ipc.of[this.id].on("error", errorHandler);
 
     return () => this.teardown(packet, responseHandler, errorHandler);
   }
 
   private teardown(packet: ReadPacket, handler: (data: unknown) => void, errorHandler: (err: unknown) => void): void {
     ipc.of[this.id].off(packet.pattern, handler);
-    ipc.of[this.id].off('error', errorHandler);
+    ipc.of[this.id].off("error", errorHandler);
   }
 }

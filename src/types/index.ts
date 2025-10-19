@@ -1,1 +1,1 @@
-export * from './ipc.types';
+export * from "./ipc.types";

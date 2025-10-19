@@ -1,9 +1,15 @@
 import eslint from '@eslint/js';
 import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
+import stylistic from '@stylistic/eslint-plugin'
 
 export default defineConfig(
   { ignores: ['dist', 'node_modules'] },
+  stylistic.configs.customize({
+    indent: 2,
+    quotes: 'double',
+    semi: true,
+  }),
   eslint.configs.recommended,
   tseslint.configs.stylistic,
   tseslint.configs.recommendedTypeChecked,

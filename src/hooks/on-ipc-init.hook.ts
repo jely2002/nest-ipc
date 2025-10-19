@@ -1,4 +1,4 @@
-import { isFunction } from '@nestjs/common/utils/shared.utils';
+import { isFunction } from "@nestjs/common/utils/shared.utils";
 import { OnIpcInit } from "./on-ipc-init.interface";
 import { IpcServer } from "../types";
 

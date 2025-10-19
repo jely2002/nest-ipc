@@ -28,6 +28,7 @@
     "@nestjs/common": "11.1.6",
     "@nestjs/core": "11.1.6",
     "@nestjs/microservices": "^11.1.6",
+    "@stylistic/eslint-plugin": "^5.5.0",
     "@types/node": "^24.8.1",
     "@types/node-ipc": "^9.2.3",
     "eslint": "^9.38.0",

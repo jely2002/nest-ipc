@@ -9,7 +9,7 @@ export interface IpcModuleOptions {
   readableAll?: boolean;
   writableAll?: boolean;
   maxConnections?: number;
-  encoding?: 'ascii' | 'utf8' | 'utf16le' | 'ucs2' | 'base64' | 'hex',
+  encoding?: "ascii" | "utf8" | "utf16le" | "ucs2" | "base64" | "hex";
   rawBuffer?: boolean;
   delimiter?: string;
   silent?: boolean;
@@ -26,4 +26,4 @@ export interface IpcModuleOptions {
   };
 }
 
-export const { ConfigurableModuleClass, MODULE_OPTIONS_TOKEN } = new ConfigurableModuleBuilder<IpcModuleOptions>().build()
+export const { ConfigurableModuleClass, MODULE_OPTIONS_TOKEN } = new ConfigurableModuleBuilder<IpcModuleOptions>().build();
