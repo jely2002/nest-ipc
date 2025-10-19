@@ -12,6 +12,10 @@ export class IpcClient extends ClientProxy {
   private readonly id: string;
   private logger = new Logger(IpcClient.name);
 
+  unwrap<IpcClient>(): IpcClient {
+    return ipc.of[this.id] as IpcClient;
+  }
+
   async connect(): Promise<void> {
     ipc.config = {
       ...ipc.config,
