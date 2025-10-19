@@ -29,7 +29,6 @@ jobs:
           draft: true
           fail_on_unmatched_files: true
           files: '*.tgz'
-          token: ${{ secrets.RELEASE_TOKEN }}
 
       - name: Publish to npm with provenance
         run: npm publish --provenance
