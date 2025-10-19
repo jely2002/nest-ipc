@@ -14,7 +14,7 @@ export async function callIpcInitHook(
 ): Promise<void> {
   for (const instance of instances) {
     if (hasOnIpcInitHook(instance)) {
-      await (instance as OnIpcInit).onIpcInit(
+      await (instance).onIpcInit(
         server,
       );
     }

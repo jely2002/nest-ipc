@@ -14,7 +14,7 @@ export async function callIpcDisconnectHook(
 ): Promise<void> {
   for (const instance of instances) {
     if (hasOnIpcDisconnectHook(instance)) {
-      (instance as OnIpcDisconnect).onIpcDisconnect(
+      (instance).onIpcDisconnect(
         socket,
       );
     }

@@ -4,7 +4,7 @@ import { IpcClient } from "./ipc.client";
 
 @Injectable()
 export class IpcService extends IpcClient {
-  constructor(@Inject(MODULE_OPTIONS_TOKEN) private moduleOptions: IpcModuleOptions) {
+  constructor(@Inject(MODULE_OPTIONS_TOKEN) moduleOptions: IpcModuleOptions) {
     super(moduleOptions);
   }
 }
