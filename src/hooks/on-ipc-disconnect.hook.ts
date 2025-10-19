@@ -1,4 +1,4 @@
-import { isFunction } from '@nestjs/common/utils/shared.utils';
+import { isFunction } from "@nestjs/common/utils/shared.utils";
 import { OnIpcDisconnect } from "./on-ipc-disconnect.interface";
 import { Socket } from "net";
 
@@ -14,7 +14,7 @@ export async function callIpcDisconnectHook(
 ): Promise<void> {
   for (const instance of instances) {
     if (hasOnIpcDisconnectHook(instance)) {
-      (instance as OnIpcDisconnect).onIpcDisconnect(
+      (instance).onIpcDisconnect(
         socket,
       );
     }

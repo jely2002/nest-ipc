@@ -5,27 +5,31 @@ on:
     tags:
       - '*'
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '16.x'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
       - name: Install npm modules
         run: npm ci
       - name: Create tarball
         run: npm pack
-      - name: Release
+
+      - name: Release (GitHub)
         uses: softprops/action-gh-release@v1
         with:
           draft: true
           fail_on_unmatched_files: true
           files: '*.tgz'
           token: ${{ secrets.RELEASE_TOKEN }}
-      - name: Build and publish artifact
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
+      - name: Publish to npm with provenance
+        run: npm publish --provenance

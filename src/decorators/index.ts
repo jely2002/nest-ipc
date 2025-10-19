@@ -1,1 +1,1 @@
-export { SubscribeIpcMessage } from './subscribe-ipc-message.decorator';
+export { SubscribeIpcMessage } from "./subscribe-ipc-message.decorator";

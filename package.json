@@ -1,10 +1,11 @@
 {
   "name": "nest-ipc",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "NestJS Microservice adapter for IPC",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint \"src/**/*.ts\" --max-warnings=0",
+    "lint:fix": "eslint \"src/**/*.ts\" --fix --max-warnings=0",
     "build": "rimraf lib && tsc",
     "prepack": "npm run build"
   },
@@ -23,29 +24,31 @@
   "author": "Jelle Glebbeek",
   "license": "MIT",
   "devDependencies": {
-    "@nestjs/common": "9.0.11",
-    "@nestjs/core": "9.0.11",
-    "@nestjs/microservices": "^9.0.11",
-    "@types/node-ipc": "^9.2.0",
-    "@typescript-eslint/eslint-plugin": "^5.37.0",
-    "@typescript-eslint/parser": "^5.37.0",
-    "eslint": "^8.23.1",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.8.3"
+    "@eslint/js": "^9.38.0",
+    "@nestjs/common": "11.1.6",
+    "@nestjs/core": "11.1.6",
+    "@nestjs/microservices": "^11.1.6",
+    "@stylistic/eslint-plugin": "^5.5.0",
+    "@types/node": "^24.8.1",
+    "@types/node-ipc": "^9.2.3",
+    "eslint": "^9.38.0",
+    "jiti": "^2.6.1",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.1"
   },
   "peerDependencies": {
-    "@nestjs/common": "^9.0.0 || ^10.0.0",
-    "@nestjs/core": "^9.0.0 || ^10.0.0",
-    "@nestjs/microservices": "^9.0.11 || ^10.0.0",
-    "reflect-metadata": "^0.1.12",
-    "rxjs": "^7.1.0"
+    "@nestjs/common": "^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@nestjs/core": "^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@nestjs/microservices": "^9.0.11 || ^10.0.0 || ^11.0.0",
+    "reflect-metadata": "^0.1.12 || ^0.2.2",
+    "rxjs": "^7.8.2"
   },
   "dependencies": {
-    "node-ipc": "10.1.0"
+    "node-ipc": "12.0.0"
   },
   "overrides": {
-    "node-ipc@>9.2.1 <10": "9.2.1",
-    "node-ipc@>10.1.0": "10.1.0"
+    "node-ipc": "12.0.0"
   },
   "repository": {
     "type": "git",
